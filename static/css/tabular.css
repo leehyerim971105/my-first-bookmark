@@ -16,8 +16,8 @@
 #tbl th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
-    background: linear-gradient(to right, #ff0000, #ff9000, #fff000, #06ff00, #00ffc0, #009cff, #0024ff, #7200ff);
+    text-align: center;
+    background: linear-gradient(to right, #7caee6, #7c86e6, #957ce6, #c47ce6, #e57ce6);
     color: white;
 }
 

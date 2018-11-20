@@ -1,12 +1,14 @@
   div#content_home {
       position: absolute;
-      top: 80px;
+      top: 100px;
+      height: auto;
       left: 110px;
       right: 110px;
   }
 
   div#homeimg {
-      background: #ddd;
+      background: lightgray;
       padding: 5px 0 1px 0;
       text-align: center;
+      font-size: 25px;
   }

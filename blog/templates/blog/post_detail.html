@@ -79,8 +79,10 @@
                     <embed type="text/html" src="{% url 'blog:tag_cloud' %}">
                 </td>
             </tr>
-            
         </table>
-        <br/>
-    </div>
+    <br/>                           <!-- ch08 1/5  -->
+    <div>                           <!-- ch08 2/5  -->
+        {% load disqus_tags %}      <!-- ch08 3/5  -->
+        {% disqus_show_comments %}  <!-- ch08 4/5  -->
+    </div>                          <!-- ch08 5/5  -->
 {% endblock %}}

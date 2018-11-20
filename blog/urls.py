@@ -56,6 +56,7 @@ urlpatterns = [
     # r'...': 이스케이프되지 않는 raw 스트링임을 표시
     # [^/]+ : / 이외 문자가 한번 이상 반복
     # (?u)  : 앞의 표현식을 유니코드로 인식하라고 지정(주소창에 한글 입력 가능하도록)
+
     # Example: /tag/tagname
     url(r'^tag/(?P<tag>[^/]+(?u))/$', PostTOL.as_view(), name='tagged_object_list'),
 ]

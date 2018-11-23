@@ -26,7 +26,7 @@
       <li><a href="{% url 'home' %}">홈</a></li>
       <li><a href="{% url 'bookmark:index' %}">책갈피</a></li>
       <li><a href="{% url 'blog:index' %}">게시판</a></li>
-      <li><a href="#">사진첩</a></li>
+      <li><a href="{% url 'photo:index' %}">사진첩</a></li>
 
       <li><a href="#">추가&bigtriangledown;</a>             <!--드롭다운 메뉴 구성-->
           <ul>
@@ -53,4 +53,4 @@
   {% block footer %}{% endblock %}    <!--블록 태그로 풋터 영역 정의-->
 
   </body>
-  </html>
+</html>

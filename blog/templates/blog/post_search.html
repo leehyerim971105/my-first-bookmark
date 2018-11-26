@@ -13,7 +13,7 @@
     <form id="my_form" action="." method="post">
         <input type='hidden' name='csrfmiddlewaretoken' value='nMh9bD11pTqq2Bru6NmY6BRztPUG1AlOdR1IQLWPNqF9KfcLT12vKED4UokHyM5h' />
         <div class="centered">
-            <table>
+            <table style="margin-left: auto; margin-right: auto;">
                 <!--form은 뷰가 넘겨준 PostSearchForm을 의미함-->
                 <!--as_table, as_ul, as_p-->
                 <tr><th><label for="id_search_word">검색어:</label></th><td><input type="text" name="search_word" maxlength="5" id="id_search_word" /></td></tr>
@@ -23,30 +23,11 @@
                 <tr><th><label for="id_search_tag">태그 검색어:</label></th><td><input type="text" name="search_tag" maxlength="20" id="id_search_tag" /></td></tr>
             </table> {% csrf_token %}
             <!--<button>초기화</button>-->
+            <br/>
             <input type="submit" value="확인" />
             <!--<input type="button" value="Reset" onClick="this.form.reset()" />-->
         </div>
     </form>
-    <br/><br/>
-
-        <p class="centered"><strong>
-            <i>통합</i> 검색어를 입력하세요.
-        </strong></p>
-
-
-    <br/><br/>
-
-    <!---->
-    <!--   -->
-
-        <p class="centered"><strong>
-            <i>개별</i> 검색어를 입력하세요.
-        </strong></p>
-   <!--블록 태그로 콘텐츠 영역 정의 -->
-
-    <!--블록 태그로 풋터 영역 정의-->
-
-<!---->
     <br/><br/>
     {% if object_list and search_term %}
         <h2 class="centered">({{ search_term }})에 대한 검색 결과검색 결과</h2>

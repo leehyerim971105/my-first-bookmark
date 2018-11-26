@@ -16,16 +16,16 @@
             </td>
 
             <td>
-                <ul>
-                    <li>Photo Description</li>
-                    {% if object.description %}<p>{{ object.description|linebreaks }}</p>
-                    {% else %}<p>(blank)</p>{% endif %}
-                    <li>Date Uploaded</li>
-                    <p>{{ object.upload_date }}</p>
-                    <li>Album Name</li>
-                    <p><a href="{% url 'photo:album_detail' object.album.id %}">
-                        {{ object.album.name }}</a></p>
-                </ul>
+            <ul>
+                <li>Photo Description</li>
+                {% if object.description %}<p>{{ object.description|linebreaks }}</p>
+                {% else %}<p>(blank)</p>{% endif %}
+                <li>Date Uploaded</li>
+                <p>{{ object.upload_date }}</p>
+                <li>Album Name</li>
+                <p><a href="{% url 'photo:album_detail' object.album.id %}">
+                    {{ object.album.name }}</a></p>
+            </ul>
             </td>
         </tr>
     </table>

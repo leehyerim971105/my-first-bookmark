@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from photo.views import *
 
-from photo.models import Album, Photo
+# from photo.models import Album, Photo
 
 urlpatterns = [
 

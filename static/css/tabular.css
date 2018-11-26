@@ -2,11 +2,13 @@
     border-collapse: collapse;
     width: 90%;
     margin: auto;
+    align: center;
 }
 
 #tbl td, #tbl th {
     border: 1px solid #ddd;
     padding: 8px;
+    width: 50px;
 }
 
 #tbl tr:nth-child(even){background-color: #f2f2f2;}

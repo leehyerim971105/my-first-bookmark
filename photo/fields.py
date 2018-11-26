@@ -16,7 +16,7 @@ class ThumbnailImageFieldFile(ImageFieldFile):
 
     def _get_thumb_url(self):
         return _add_thumb(self.url)
-    thumb_url = property(_get_thumb_path)
+    thumb_url = property(_get_thumb_url)
 
     def save(self, name, content, save=True):
         super(ThumbnailImageFieldFile, self).save(name, content, save)
@@ -42,8 +42,6 @@ class ThumbnailImageField(ImageField):
         self.thumb_width = thumb_width
         self.thumb_height = thumb_height
         super(ThumbnailImageField, self).__init__(*args, **kwargs)
-
-
 
 
 

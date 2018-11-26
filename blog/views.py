@@ -108,6 +108,7 @@ class SearchFormView(FormView):
 	        Q(tag__icontains=schWord)
         ).distinct()
 
+
         # 템플릿에 전달할 맥락 변수 context를 사전 형식으로 정의
         context = {}
         context['form'] = form  # 여기서 form은 PostSearchForm을 지칭함

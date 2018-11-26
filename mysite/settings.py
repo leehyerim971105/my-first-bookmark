@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',             # (ch08) 2/4
     'photo.apps.PhotoConfig',
 ]
+
 DISQUS_WEBSITE_SHORTNAME = 'leehyerim1105'   # (ch08) 3/4 [Website Name]
 SITE_ID = 1                             # (ch08) 4/4 django.contrib.sites를 등록할 때 사용하는 값, 임의로 지정하지만, 중복되지 않도록!
 

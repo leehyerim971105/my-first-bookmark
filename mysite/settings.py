@@ -136,4 +136,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]   # 추가 (교과서 40 쪽)
 
 MEDIA_URL = '/media/'                             # 추가 (교과서 40 쪽)
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')    # 추가 (교과서 40 쪽)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')   # 추가 (교과서 40 쪽)

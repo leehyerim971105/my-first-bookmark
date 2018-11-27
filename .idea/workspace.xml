@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38dc6797-ebe5-4335-a5d3-5095eac24cea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/photo/templates/photo/album_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo/templates/photo/album_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/1505452520062.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/1505452520062.thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/강다니엘.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/강다니엘.thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/김재환.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/김재환.thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/라이관린.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/라이관린.thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/박우진.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/박우진.thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/박지훈.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/박지훈.thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/배진영.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/배진영.thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/옹성우.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/옹성우.thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/윤지성.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/윤지성.thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/이대휘.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/이대휘.thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/하성운.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/하성운.thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/황민현.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/photo/2018/11/황민현.thumb.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -332,9 +355,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2588997" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2588997" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -348,7 +370,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.024866786" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.39253998" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />

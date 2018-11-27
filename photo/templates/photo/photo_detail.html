@@ -1,12 +1,13 @@
-{% extends "base.html" %}  <!--반드시 첫 줄에 있어야 함-->
-{% block title %}장고 사진 상세 목록{% endblock %}
+{% extends "base.html" %}
+
+{% block title %}photo_detail.html{% endblock %}
+
 {% load staticfiles %}
 {% block extrastyle %}{% static "photo/photo.css" %}{% endblock %}
-{% block content %} <!--콘텐츠 블록 재정의-->
+
+{% block content %}
 <div id="content">
-
     <h2>{{ object.title }}</h2>
-
     <table class="photo-detail">
         <tr>
             <td>
@@ -14,21 +15,22 @@
                     <img style="max-width:100%" src="{{ object.image.url }}" />
                 </a>
             </td>
-
             <td>
-            <ul>
-                <li>Photo Description</li>
-                {% if object.description %}<p>{{ object.description|linebreaks }}</p>
-                {% else %}<p>(blank)</p>{% endif %}
-                <li>Date Uploaded</li>
-                <p>{{ object.upload_date }}</p>
-                <li>Album Name</li>
-                <p><a href="{% url 'photo:album_detail' object.album.id %}">
-                    {{ object.album.name }}</a></p>
-            </ul>
+                <ul>
+                    <li>설명</li>
+                    {% if object.description %}
+                        <p>{{ object.description|linebreaks }}</p>
+                    {% else %}
+                        <p>(blank)</p>
+                    {% endif %}
+                    <li>등록 일시</li>
+                    <p>{{ object.upload_date }}</p>
+                    <!--https://docs.djangoproject.com/en/dev/ref/templates/builtins/?from=olddocs-->
+                    <li>앨범</li>
+                    <p><a href="{% url 'photo:album_detail' object.album.id %}">{{ object.album.name }}</a></p>
+                </ul>
             </td>
         </tr>
     </table>
-
 </div>
 {% endblock %}

@@ -1,4 +1,4 @@
-/*  album.html */
+/* album_list.html */
 div.album-list {
     margin: 20px 50px;
 }
@@ -9,7 +9,7 @@ div.album-list-photo {
     height: 180px;
 }
 
-/*  album_detail.html */
+/* album_detail.html */
 div.album-detail {
     margin: 30px 10px;
 }
@@ -26,11 +26,10 @@ div.album-detail-photo > li {
     font-style: italic;
 }
 
-/*  photo_detail.html */
+/* photo_detail.html */
 table.photo-detail {
     margin: 30px 50px 0 50px;
     border: 1px solid #ccc;
-    padding: 20px 20px;
 }
 
 table.photo-detail td {
@@ -53,11 +52,3 @@ img.thumbnail {
 div.clear_float {
     clear: both;
 }
-
-
-
-
-
-
-
-

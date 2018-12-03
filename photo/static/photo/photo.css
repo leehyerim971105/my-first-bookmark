@@ -52,3 +52,6 @@ img.thumbnail {
 div.clear_float {
     clear: both;
 }
+
+.change_image { max-height: 300px; width: auto; text-align: center; }
+.centered { text-align: center; }

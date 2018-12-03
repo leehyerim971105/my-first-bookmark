@@ -7,8 +7,8 @@
 
 {% block content %}
 <div id="content">
-    <h2>{{ object.title }}</h2>
-        <h2><p class="other_photos">
+    <h2 class="centered">{{ object.title }}</h2>
+        <h2 class="centered"><p class="other_photos">
             {% if object.get_previous_photo %}
                 <a href="{{ object.get_previous_photo.get_absolute_url }}" title="View previous photo">
                     &laquo;-- {{ object.get_previous_photo }}
@@ -30,7 +30,7 @@
         <tr>
             <td>
                 <a href="{{ object.image.url }}">
-                    <img style="max-width:100%" src="{{ object.image.url }}" />
+                    <img class="change_image" style="max-width:100%" src="{{ object.image.url }}" />
                 </a>
             </td>
             <td>

@@ -42,7 +42,7 @@ class Photo(models.Model):
 	# 	return self.created_at.astimezone(korean_timezone)
 
 	class Meta:
-		ordering = ['title']
+		ordering = ['-upload_date']
 
 	def __str__(self):
 		return self.title

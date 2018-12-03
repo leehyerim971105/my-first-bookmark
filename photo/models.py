@@ -50,3 +50,23 @@ class Photo(models.Model):
 	def get_absolute_url(self):
 		# 이 메소드가 정의된 객체의 URL /photo/photo/99 형식의 값을 반환
 		return reverse('photo:photo_detail', args=(self.id,))
+
+	def get_next_photo(self):
+		next_photo = Photo.objects.filter(
+			upload_date__gt = self.upload_date,
+			album = self.album
+		).last()
+		return next_photo
+
+	def get_previous_photo(self):
+		previous_photo = Photo.objects.filter(
+			upload_date__lt = self.upload_date,
+			album = self.album
+		).first()
+		return previous_photo
+
+
+
+
+
+

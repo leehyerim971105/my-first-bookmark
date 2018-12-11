@@ -14,13 +14,23 @@
 
   <body>              <!--바디 영역은 4 영역(헤더/메뉴/콘텐츠/풋터)으로 구성-->
 
-  <div id="header">                   <!--헤더 영역-->
-      <h2 class="maintitle">장고로 만든 리미의 블로그</h2>
-      <h4 class="welcome">환영합니다. <a href="#">혜림</a>님.  /
-                  <a href="#">비밀번호 변경</a> /
-                  <a href="#">로그아웃</a>
-      </h4>
-  </div>
+<div id="header">                                           <!-- ch11 div#header 수정 -->
+    <h2 class="maintitle">쉽고 빠른 장고 웹 프로그래밍</h2>
+    <!-- user 객체는 장고 기본 객체이므로 모든 템플릿에서 사용 가능함 -->
+    {% if user.is_active %} <!-- 로그인되면 user.is_active() 함수가 참을 반환-->
+        <h4 class="welcome">환영합니다,
+            <!-- firstof 태그는 뒤에 나오는 인자들 중에서 False 아닌 첫 인자를 선택함 -->
+            <strong>{% firstof user.get_short_name user.get_username %}</strong>님. /
+            <a href="{% url 'password_change' %}">비밀번호 변경</a> /
+            <a href="{% url 'logout' %}">로그아웃</a>
+        </h4>
+    {% else %}
+        <h4 class="welcome">환영합니다, 손님. /
+            <a href="{% url 'login' %}">로그인</a> /
+            <a href="{% url 'register' %}">회원가입</a>
+        </h4>
+    {% endif %}
+</div>
 
   <div id="menu">                     <!--메뉴 영역-->
       <li><a href="{% url 'home' %}">홈</a></li>

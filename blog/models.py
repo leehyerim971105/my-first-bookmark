@@ -6,6 +6,8 @@ from django.db import models
 # url 패턴을 만들어주는 장고 내장 함수 reverse()를 위한 임포트
 from django.core.urlresolvers import reverse
 from tagging.fields import TagField
+from django.contrib.auth.models import User # 추가
+from django.utils.text import slugify # 추가
 
 # Create your models here.
 
@@ -30,13 +32,15 @@ class Post(models.Model):
                                        auto_now=True)  # 최종 수정 일시를 자동 저장하도록
     tag = TagField('태그',  # ch07 추가
                    help_text='게시글에 대한 태그')  # ch07 추가
+    # owner = models.ForeignKey(User, null=True)  # 추가
+
 
     class Meta:  # 필드 속성 외에 필요한 파라미터를 Meta 내부 클래스로 정의
         verbose_name = '기사'              # 'post'
         verbose_name_plural = '기사 모음'  # 'posts'
         db_table  = 'my_posts'           # DB에 저장할 테이블 이름을 my_posts'라고 지정
                                          # 기본값(앱이름_모델클래스이름)은 'blog_post'
-        ordering  = ('-modify_date',)  # 최종 수정 일시의 내림차순 정렬
+        ordering  = ('-create_date',)  # 최종 수정 일시의 내림차순 정렬
 
     def __str__(self):
         return self.title  # 객체를 출력할 때 제목만 출력
@@ -51,3 +55,8 @@ class Post(models.Model):
 
     def get_next_post(self):  # 3.2.5 항에서 템플릿 작성할 때 사용
         return self.get_next_by_modify_date()
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.title, allow_unicode=True)
+        super(Post, self).save(*args, **kwargs)

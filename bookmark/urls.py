@@ -1,6 +1,7 @@
 from django.conf.urls import url
 # from bookmark.views import BookmarkLV, BookmarkDV # 교과서 ch02 52쪽의 원래 코드를 아래와 같이 수정함
 from . import views  # 이렇게 수정하면 아래 코드에서와 같이 views.~ 형식으로 변경해야 함
+from bookmark.views import *
 urlpatterns = [
     # ch02에서 코딩했던 부분을 아래와 같이 수정하였으므로 주석 처리함
     # # 북마크 앱을 위한 클래스 기반 뷰
@@ -31,6 +32,18 @@ urlpatterns = [
     # url 패턴 매칭을 '/' 단위로 처리하기 위하여 아래와 같이 수정
     # 이에 따라서 템플릿에서도 수정이 필요함
     url(r'^t_CBV/$', views.BookmarkLV.as_view(), name='index_t_CBV'),
+
+    # Example: /add/
+    url(r'^add/$', BookmarkCreateView.as_view(), name="add",),
+
+    # # Example: /change/
+    # url(r'^change/$', BookmarkChangeLV.as_view(), name="change", ),
+    #
+    # # Example: /99/update/
+    # url(r'^(?P<pk>[0-9]+)/update/$', BookmarkUpdateView.as_view(), name="update", ),
+    #
+    # # Example: /99/delete/
+    # url(r'^(?P<pk>[0-9]+)/delete/$', BookmarkDeleteView.as_view(), name="delete", ),
 ]
 # 주의할 점
 # bookmark.urls 내부에서 지정한 url 패턴의 이름 'index', 'detail', ... 등을

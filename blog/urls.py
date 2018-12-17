@@ -61,6 +61,20 @@ urlpatterns = [
 
     # Example: /search/  # ch09 1/1
     url(r'^search/$', SearchFormView.as_view(), name='search'),
+
+    # Example: /add/
+    url(r'^add/$', PostCreateView.as_view(), name="add",),
+
+    # # Example: /change/
+    # url(r'^change/$', PostChangeLV.as_view(), name="change",),
+    #
+    # # Example: /99/update/
+    # url(r'^(?P<pk>[0-9]+)/update/$', PostUpdateView.as_view(), name="update",),
+    #
+    # # Example: /99/delete/
+    # url(r'^(?P<pk>[0-9]+)/delete/$', PostDeleteView.as_view(), name="delete",),
 ]
+
+
 # 위에서 지정한 name 항목을 템플릿에서 사용할 때에는 이름공간을 포함하여,
 # blog:index, blog:post_list, blog:post_detail, blog:post_archive, ... 로 명시해야 함

@@ -6,14 +6,14 @@ from photo.models import Album, Photo
 # 출력 형식은 StackedInline(세로 나열형) 및 TabularInline(가로 나열형) 두 종류
 class PhotoInline(admin.StackedInline):
     model = Photo               # 추가로 함께 출력할 자식 테이블을 지정
-    extra = 2                   # 함께 등록할 Photo 테이블의 객체 수 지정
+    extra = 13             # 함께 등록할 Photo 테이블의 객체 수 지정
 
 class AlbumAdmin(admin.ModelAdmin):
     inlines = [PhotoInline]     # 앨범 객체와 동시에 처리할 자식 클래스 지정
     list_display = ('name', 'description')
 
 class PhotoAdmin(admin.ModelAdmin):
-    list_display = ('title', 'upload_date')
+    list_display = ('title', 'upload_date', 'bojunggum', 'junse', 'floor', 'elevator', 'inHome')
 
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Photo, PhotoAdmin)

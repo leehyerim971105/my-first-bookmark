@@ -1,6 +1,6 @@
 {% extends "base.html" %}                   <!--base.html을 상속받는다고 선언-->
 
-{% block title %}장고 웹 사이트{% endblock %}    <!--title 블록 재정의-->
+{% block title %}방구{% endblock %}    <!--title 블록 재정의-->
 
 <!--정적 파일인 css 연결하기 위하여, staticfiles를 로드-->
 {% load staticfiles %}
@@ -14,12 +14,12 @@
       <div id="homeimg">      <!--homeimg 영역 정의-->
           <!--<a href="/"><img src="{% static 'img/iznone.jpg' %}" style="height:256px;"/></a>-->
           <a href="/"><img src="{% static 'img/spring.jpg' %}" style="height:256px;"/></a>
-          <h4 style="margin: 0;">워너원 신곡 '봄바람' 많이 들어주세요~!</h4>
+          <h4 style="margin: 0;"></h4>
       </div>
 
-      <hr style="margin: 5px 0;">     <!--그림 및으로 5px 간격을 두고 수평선 넣기-->
+      <!--<hr style="margin: 5px 0;">     &lt;!&ndash;그림 및으로 5px 간격을 두고 수평선 넣기&ndash;&gt;-->
 
-      <h2>웹 앱 선택</h2>
+      <h2></h2>
 
       <table id="applist">
           <tr>
@@ -30,14 +30,14 @@
           </tr>
 
           <tr>
-          <td><b><i><a href="{% url 'blog:index' %}">게시판</a></i><b></td>
+          <td><b><i><a href="{% url 'blog:index' %}">공지사항</a></i><b></td>
           <td>당신의 게시물을 등록하고 다른 사람들과 공유할 수 있습니다. </td>
           <td id="Edit"><i><a href="#">등록</a></i></td>
           <td id="Edit"><i><a href="#">편집</a></i></td>
           </tr>
 
           <tr>
-          <td><b><i><a href="#">사진첩</a></i><b></td>
+          <td><b><i><a href="#">방목록</a></i><b></td>
           <td>당신의 사진을 등록하고 다른 사람들과 공유할 수 있습니다.</td>
           <td id="Edit"><i><a href="#">등록</a></i></td>
           <td id="Edit"><i><a href="#">편집</a></i></td>
@@ -49,6 +49,6 @@
   {% block footer %}                      <!--footer 블록 재정의-->
   <div id="footer">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Copyleft.svg/220px-Copyleft.svg.png"
-           height="12" width="12" /> LeeHyeRim
+           height="12" width="12" /> Bangu
   </div>
   {% endblock footer %}

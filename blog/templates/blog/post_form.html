@@ -1,0 +1,56 @@
+{% extends "base.html" %}                   <!--base.html을 상속받는다고 선언-->
+
+{% block title %}블로그 폼 수정{% endblock %}    <!--title 블록 재정의-->
+
+<!--정적 파일인 css 연결하기 위하여, staticfiles를 로드-->
+{% load staticfiles %}
+<!--extrastyle 블록을 재정의하여 추가적으로 home.css 연결-->
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+
+{% block content %}                         <!--content 블록 재정의-->
+
+<div id="content">
+
+    <h1>공지사항을 추가하세요</h1>
+
+    <form action="." method="post">{% csrf_token %}
+
+    {% if form.errors %}
+        <p class="errornote">Wrong! Please correct the error(s) below.</p>
+    {% endif %}
+
+        <fieldset class="aligned">
+            <div class="form-row">
+                {{ form.title.label_tag }} {{ form.title }}
+            </div>
+            <div class="form-row">
+                {{ form.slug.label_tag }} {{ form.slug }}
+            </div>
+            <div class="form-row">
+                {{ form.description.label_tag }} {{ form.description }}
+            </div>
+            <div class="form-row">
+                {{ form.content.label_tag }} {{ form.content }}
+            </div>
+            <div class="form-row">
+                {{ form.tag.label_tag }} {{ form.tag }}
+            </div>
+
+        </fieldset>
+        <div class="submit-row">
+            <input type="submit" value="Submit"/>
+        </div>
+        <script type="text/javascript">document.getElementById('id_title').focus();</script>
+    </form>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

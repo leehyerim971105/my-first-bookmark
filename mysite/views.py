@@ -11,6 +11,7 @@ from django.contrib.auth.forms import UserCreationForm
 # URL 패턴명을 인식하려면 urls.py 모듈이 메모리에 적재되어야 하고,
 # 이를 최대한 지연시키기 위하여 reverse()가 아닌 reverse_lazy()를 적용
 from django.core.urlresolvers import reverse_lazy
+from django.contrib.auth.decorators import login_required
 
 # TemplateView 제네릭 뷰를 상속받아서 HomeView 클래스 작성
 class HomeView(TemplateView):
@@ -31,4 +32,19 @@ class UserCreateView(CreateView):
 class UserCreateDoneTV(TemplateView):
   # User 생성이 성공하면 success_url 요청을 처리하는 뷰
   template_name = 'registration/register_done.html'
-  
+
+class LoginRequiredMixin(object):
+  @classmethod
+  def as_view(cls, **initkwargs):
+    view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
+    return login_required(view)
+
+
+
+
+
+
+
+
+
+

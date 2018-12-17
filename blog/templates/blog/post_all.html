@@ -5,23 +5,23 @@
 {% block content %}
     <!--div#content 내부로 전체 콘텐츠 이동-->
     <div id="content">
-        <h1 class="centered">블로그 목록 (표 형식)</h1>
+        <h1 class="centered">공지사항</h1>
         <table id="tbl">
             <tr>
-                <th>번호</th>
-                <th>최종 수정일</th>
+                <th id="number">번호</th>
                 <th>제목</th>
-                <th>슬러그</th>
                 <th>요약</th>
+                <th>슬러그</th>
+                <th>최종 수정일</th>
             </tr>
             {% for post in posts %}
             <tr>
                 <td>{{ post.id }}</td>
-                <td>{{ post.modify_date|date:"Y년 m월 d일"}}</td>
                 <td><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a></td>
+                <td>{{ post.description }}</td>
                 <td>{{ post.slug }}</td>
                 <!--<td><p>{{ post.description }}</p></td>-->
-                <td>{{ post.description }}</td>
+                <td>{{ post.modify_date|date:"Y년 m월 d일"}}</td>
             </tr>
             {% endfor %}
         </table>
@@ -44,6 +44,11 @@
                     끝 페이지
                 {% endif %}
             </span>
+        </div>
+        <div class="modification">
+            <a class="modification" href="{% url 'blog:add' %}">
+                글쓰기&nbsp;&nbsp;
+            <img src="{% static 'img/edit.png' %}"></a>
         </div>
     </div>
 {% endblock %}

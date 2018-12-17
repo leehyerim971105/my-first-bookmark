@@ -1,14 +1,23 @@
   div#content_home {
       position: absolute;
       top: 100px;
-      height: auto;
+      height: 1000px;
       left: 110px;
       right: 110px;
   }
 
   div#homeimg {
+      margin: 1% auto 1% auto;
       background: lightgray;
       padding: 5px 0 1px 0;
       text-align: center;
       font-size: 25px;
   }
+
+#search {
+    margin: auto auto 5% auto;
+}
+
+#applist {
+    margin-top: 50px;
+}

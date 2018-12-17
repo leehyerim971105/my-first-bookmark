@@ -8,6 +8,10 @@ from blog.models import Post
 from tagging.models import Tag, TaggedItem                          # ch07추가02
 from tagging.views import TaggedObjectList                          # ch07추가03
 
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.urlresolvers import reverse_lazy
+from mysite.views import LoginRequiredMixin
+
 # 아래 두 클래스 추가                                               # ch07추가04
 # /blog/tag/ 요청에 따라 태그 클라우드 템플릿을 출력
 # TemplateView 제네릭 뷰는 테이블 처리 없이 단순 템플릿 렌더링 처리만 담당하는 뷰
@@ -30,7 +34,7 @@ class PostLV(ListView) :
     # 컨텍스트 객체 이름을 기본값(object_list)와 다르게 지정했지만,
     # 기본값(object_list)도 여전히 사용 가능함
     context_object_name = 'posts'
-    paginate_by = 5  # !!!페이지 당 5 개 객체를 처리하도록 지정!!!
+    paginate_by = 10  # !!!페이지 당 5 개 객체를 처리하도록 지정!!!
 
 # DetailView를 상속받아서 PostDV 작성
 # 기본키 대신 slug를 전달 받고, 나머지 속성은 기본값 사용
@@ -123,3 +127,40 @@ class SearchFormView(FormView):
 	    # 리다이렉트 처리가 되지 않게됨.
         return render(self.request, self.template_name, context)
 # ch09 추가 1/1 종료
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'slug', 'description', 'content', 'tag']
+    initial = {'slug': 'auto-filling-do-not-input'}
+    #fields = ['title', 'description', 'content', 'tag']
+    success_url = reverse_lazy('blog:index')
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super(PostCreateView, self).form_valid(form)
+
+# class PostChangeLV(LoginRequiredMixin, ListView):
+#     template_name = 'blog/post_change_list.html'
+#
+#     def get_queryset(self):
+#         return Post.objects.filter(owner=self.request.user)
+#
+# class PostUpdateView(LoginRequiredMixin, UpdateView):
+#     model = Post
+#     fields = ['title', 'slug', 'description', 'content', 'tag']
+#     success_url = reverse_lazy('blog:index')
+#
+# class PostDeleteView(LoginRequiredMixin, DeleteView):
+#     model = Post
+#     success_url = reverse_lazy('blog:index')
+
+
+
+
+
+
+
+
+
+
+

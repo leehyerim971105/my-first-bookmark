@@ -1,0 +1,34 @@
+{% extends "base.html" %}                   <!--base.html을 상속받는다고 선언-->
+
+{% block title %}post_confirm_delete{% endblock %}    <!--title 블록 재정의-->
+
+<!--정적 파일인 css 연결하기 위하여, staticfiles를 로드-->
+{% load staticfiles %}
+<!--extrastyle 블록을 재정의하여 추가적으로 home.css 연결-->
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+{% block content %}                         <!--content 블록 재정의-->
+
+<div id="content">
+<h1>Post Change - {{user}}</h1>
+
+<table class="change-list">
+    <tr>
+        <th>TItle</th>
+        <th>Description</th>
+        <th>Owner</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for item in object_list %}
+    <tr>
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.owner }}</td>
+        <td><a href="{% url 'blog:update' item.id %}">Update</a></td>
+        <td><a href="{% url 'blog:delete' item.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

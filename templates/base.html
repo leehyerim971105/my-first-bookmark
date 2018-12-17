@@ -2,11 +2,13 @@
   <html lang="ko">    <!--언어는 한국어로 지정--><!---->
 
   <head>              <!--페이지 타이틀과 css 파일 2개를 연결-->
-  <title>{% block title %}Django Web Programming{% endblock %}</title>
+  <title>{% block title %}<img src="">방구{% endblock %}</title>
 
   {% load staticfiles %}  <!--정적 파일인 css 연결하기 위하여, staticfiles를 로드-->
   <!--스타일시트 css/base.css 작성이 필요함-->
-  <link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+  </style>
   <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base.css" %}{% endblock %}" />
   <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
 
@@ -15,48 +17,44 @@
   <body>              <!--바디 영역은 4 영역(헤더/메뉴/콘텐츠/풋터)으로 구성-->
 
 <div id="header">                                           <!-- ch11 div#header 수정 -->
-    <h2 class="maintitle">쉽고 빠른 장고 웹 프로그래밍</h2>
+    <h2 class="maintitle"><a href="{% url 'home' %}">방구</a></h2>
+    <ul class="maintitle">
+      <li class="maintitle"><a href="{% url 'home' %}">홈</a></li>
+      <li class="maintitle"><a href="{% url 'bookmark:index' %}">책갈피</a></li>
+      <li class="maintitle"><a href="{% url 'photo:index' %}">사진첩</a></li>
+      <li class="maintitle"><a href="{% url 'blog:post_archive' %}">저장소</a></li>
+      <li class="maintitle"><a href="{% url 'blog:search' %}">검색</a></li>             <!--ch09 수정 1/1-->
+      <li class="maintitle"><a href="{% url 'blog:index' %}">공지사항</a></li>
+      <li class="maintitle"><a href="{% url 'admin:index' %}">관리자</a></li>
+    </ul>
     <!-- user 객체는 장고 기본 객체이므로 모든 템플릿에서 사용 가능함 -->
     {% if user.is_active %} <!-- 로그인되면 user.is_active() 함수가 참을 반환-->
-        <h4 class="welcome">환영합니다,
+        <h4 class="welcome">
             <!-- firstof 태그는 뒤에 나오는 인자들 중에서 False 아닌 첫 인자를 선택함 -->
-            <strong>{% firstof user.get_short_name user.get_username %}</strong>님. /
-            <a href="{% url 'password_change' %}">비밀번호 변경</a> /
+            <strong>{% firstof user.get_short_name user.get_username %}</strong>&nbsp;&nbsp;
+            <a href="{% url 'password_change' %}">비밀번호 변경</a>&nbsp;&nbsp;
             <a href="{% url 'logout' %}">로그아웃</a>
         </h4>
     {% else %}
-        <h4 class="welcome">리미의 블로그에 오신걸 환영합니다. /
-            <a href="{% url 'login' %}">로그인</a> /
+        <h4 class="welcome">
+            <a href="{% url 'login' %}">로그인</a>&nbsp;&nbsp;
             <a href="{% url 'register' %}">회원가입</a>
         </h4>
     {% endif %}
+
 </div>
 
-  <div id="menu">                     <!--메뉴 영역-->
-      <li><a href="{% url 'home' %}">홈</a></li>
-      <li><a href="{% url 'bookmark:index' %}">책갈피</a></li>
-      <li><a href="{% url 'blog:index' %}">게시판</a></li>
-      <li><a href="{% url 'photo:index' %}">사진첩</a></li>
+  <!--<div id="menu">                     &lt;!&ndash;메뉴 영역&ndash;&gt;-->
 
-      <li><a href="#">추가&bigtriangledown;</a>             <!--드롭다운 메뉴 구성-->
-          <ul>
-              <li><a href="#">책갈피</a></li>
-              <li><a href="#">게시판</a></li>
-              <li><a href="#">사진첩</a></li>
-          </ul>
-      </li>
-      <li><a href="#">편집&bigtriangledown;</a>             <!--드롭다운 메뉴 구성-->
-          <ul>
-              <li><a href="#">책갈피</a></li>
-              <li><a href="#">게시판</a></li>
-              <li><a href="#">사진첩</a></li>
-          </ul>
-      </li>
 
-      <li><a href="{% url 'blog:post_archive' %}">저장소</a></li>
-      <li><a href="{% url 'blog:search' %}">검색</a></li>             <!--ch09 수정 1/1-->
-      <li><a href="{% url 'admin:index' %}">관리자</a></li>
-  </div>
+      <!--<li><a href="#">추가&bigtriangledown;</a>             &lt;!&ndash;드롭다운 메뉴 구성&ndash;&gt;-->
+          <!--<ul>-->
+              <!--<li><a href="{% url 'bookmark:add' %}">책갈피</a></li>-->
+              <!--<li><a href="{% url 'blog:add' %}">게시판</a></li>-->
+              <!--<li><a href="#">사진첩</a></li>-->
+          <!--</ul>-->
+      <!--</li>-->
+  <!--</div>-->
 
   {% block content %}{% endblock %}   <!--블록 태그로 콘텐츠 영역 정의 -->
 
